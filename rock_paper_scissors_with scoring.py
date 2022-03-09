@@ -1,3 +1,14 @@
+# Task A: Create a Game: Rock, Paper, Scissors!
+# You are going to create a command line version of the game: Rock...Paper...Scissors!
+# The user will play against the computer at this game. You should design a program that does the following:
+# • Prompts the user to enter a value: R, P or S
+# • The program should convert this value into Rock, Paper, or Scissors respectively
+# • Asks the computer to generate a random value between 0 and 2
+# • Convert the computer’s choice. 0 becomes Rock; 1 becomes Paper; 2 becomes Scissors
+# • Compare the user’s choice with the computer’s choice to display a message indicating whether
+# the user won, lost or drew against the computer
+# Showcase what you have learned about conditional statements and create your own functions
+
 import random
 
 
@@ -13,13 +24,8 @@ def user_selection():
 
 
 def computer_selection():
-    computer_output = random.choice(range(0, 3))
-    if computer_output == 0:
-        computer_output = "Rock"
-    elif computer_output == 1:
-        computer_output = "Paper"
-    elif computer_output == 2:
-        computer_output = "Scissors"
+    weapon_of_choice = ["Rock", "Paper", "Scissors"]
+    computer_output = weapon_of_choice[random.choice(range(0, 2))]
     return computer_output
 
 
@@ -76,7 +82,7 @@ def final_scores(user_points, computer_points):
 
 
 play_input = input("Do you want to play rock, paper, scissors against the computer? \n Y or N: ")
-print("Best of 3: Win for 2 points, draw for 1 point and lose means 0 points.")
+print("Best of 3: Win for 2 points, draw for 1 point and lose for 0 points.")
 tries = 0
 user_points = 0
 computer_points = 0
